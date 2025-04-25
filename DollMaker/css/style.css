@@ -1,0 +1,454 @@
+:root {
+  --border-radius: 0px;
+  --accent-color: pink;
+}
+body {
+  background-image: url('../images/ethnic-background-theme-kazakh-national-ornament-frame_149326-10270.jpg.avif');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#body {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-content: center;
+  align-items: flex-start;
+  justify-content: left;
+  width: 100%;
+  flex-wrap: wrap;
+  height: 100vh;
+}
+
+#canvas {
+  border: 1px solid rgba(0, 0, 0, 0.107);
+  border-radius: var(--border-radius);
+  border: 0;
+  background-color: #fcdced;
+  width: 50%;
+  margin-left: 50px;
+
+  
+}
+
+.canvas {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+   width: 700px; 
+  height: min-content; 
+  max-height: 450px; 
+}
+
+.options {
+  margin-left: 10px;
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  visibility: hidden;
+}
+
+.clickedOption {
+  border: 3px solid black;
+  background-color: pink;
+}
+
+.options ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  list-style: none;
+  padding-left: 0;
+  width: 85px;
+  margin-right: 15px;
+}
+
+.options li {
+  cursor: pointer;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.107);
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: center;
+  margin-right: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  margin-bottom: 8px;
+}
+
+.options li img {
+  width: 100%;
+}
+
+.categories {
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-top: 16px;
+  /* width: 500px; */
+  width: 100px;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.categories a {
+  border: 1px solid rgba(0, 0, 0, 0.107);
+  /* border-radius: 15px; */
+  list-style: none;
+  font-size: 14px;
+  padding: 10px 5px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.clickedCategory {
+  background-color: pink
+}
+
+.options::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(180deg, #d0368a 0%, #708ad4 99%);
+  box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+  border-radius: 10px;
+}
+
+.options::-webkit-scrollbar {
+  width: 10px;
+}
+
+.options::-webkit-scrollbar-track {
+  background-color: #e4e4e473;
+  border-radius: 10px;
+}
+
+.categories::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(90deg, #d0368a 0%, #708ad4 99%);
+  box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+  border-radius: 10px;
+}
+
+.categories::-webkit-scrollbar {
+  width: 10px;
+}
+
+.categories::-webkit-scrollbar-track {
+  background-color: #e4e4e473;
+  border-radius: 10px;
+}
+
+#exportCanvasBtn {
+  position: absolute;
+  left: 10px;
+  top: 465px;
+  /* bottom: 13px; */
+  font-size: 12px;
+
+  cursor: pointer;
+  background-color: pink;
+  border: 0;
+  border-radius: 3px;
+  padding: 5px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+#toggleMultiselectBtn {
+  position: absolute;
+  left: 285px;
+  top: 10px;
+  font-size: 12px;
+
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  border: 0;
+  border-radius: 3px;
+  padding: 5px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  transition: ease-in;
+}
+
+#toggleMultiselectBtn.active {
+  background-color: pink;
+}
+
+/* Modal: popup screen to switch doll */
+#switchDollBtn {
+  position: absolute;
+  left: 8px;
+  top: 10px;
+  font-size: 12px;
+
+  background-color: pink;
+  cursor: pointer;
+  border: 0;
+  border-radius: 3px;
+  padding: 5px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.dollsModal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+.dollsModal ul {
+  list-style: none;
+  margin: 1% auto;
+  /* 1% from the top and centered */
+  padding: 20px;
+  width: 60%;
+  background-color: white;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dollsModal li {
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.107);
+  border-radius: 5px;
+
+  width: 200px;
+  margin: 10px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.dollsModal li img {
+  width: 100%;
+}
+
+#saveDollsBtn {
+  background-color: pink;
+  font-weight: 500;
+  font-size: 22px;
+  display: flex;
+  margin: 0 auto;
+  /* 1% from the top and centered */
+  padding: 20px 40px;
+  justify-content: center;
+  border: 0;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.35);
+  transform: ease-in;
+}
+
+.modalCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 200px;
+  height: 286.5px;
+  transition: ease-in;
+}
+
+.modalCard span {
+  justify-content: center;
+  text-align: center;
+}
+
+/* applied options */
+#appliedOptionsOl {
+  overflow-x: auto;
+  margin-top: 5px;
+  width: 500px;
+  white-space: nowrap;
+  padding-left: 0;
+}
+
+.appliedOption {
+  border: 1px solid rgba(0, 0, 0, 0.107);
+  border-radius: var(--border-radius);
+  list-style: none;
+  padding: 10px;
+  margin-right: 20px;
+  margin-left: 0px;
+  margin-bottom: 15px;
+
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+}
+
+.appliedOption img {
+  height: 75px;
+  width: 65%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.draggable {
+  cursor: pointer;
+  background-color: white;
+}
+
+.dragover {
+  background-color: rgb(151, 151, 151);
+}
+
+@media screen and (max-width: 615px) {
+  .categories {
+    width: 90%;
+    margin-top: 5px;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .categories a {
+    padding: 25px;
+    margin: 0;
+    margin-right: 5px;
+    margin-bottom: 15px;
+
+  }
+}
+
+@media screen and (max-width: 530px) {
+  #body {
+    display: block;
+  }
+
+  .categories {
+    width: 90%;
+    margin-top: 5px;
+    flex-direction: row;
+  }
+
+  .categories a {
+    padding: 25px;
+    margin: 0;
+    margin-right: 5px;
+    margin-bottom: 15px;
+
+  }
+
+  #canvas {
+    height: 400px;
+    width: 300px;
+    margin-left: 30px;
+  }
+
+  .options {
+    float: none;
+    width: 90%;
+    margin-left: 0;
+    overflow-y: hidden;
+    overflow-x: auto;
+  }
+
+  .options ul {
+    /* flex-direction: row;
+    flex-wrap: nowrap;
+    width: 150%; */
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* width: 150%; */
+    height: 70px;
+    margin-top: 5px;
+  }
+
+  .options li {
+    width: 60px;
+    margin-bottom: 0px;
+    margin-right: 8px;
+  }
+
+  .options li img {
+    /* height: 150%;
+    width: 100%; */
+    height: 75px;
+    width: 65%;
+    /* width: 80%; */
+  }
+
+  #exportCanvasBtn {
+    right: unset;
+    bottom: unset;
+    left: 35px;
+    top: 370px;
+  }
+
+  #toggleMultiselectBtn {
+    right: unset;
+    bottom: unset;
+    left: 220px;
+    top: 6px;
+  }
+
+  .options::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(90deg, #d0368a 0%, #708ad4 99%);
+  }
+
+  #switchDollBtn {
+    right: unset;
+    bottom: unset;
+    left: 35px;
+    top: 6px;
+  }
+
+  .dollsModal li {
+    width: 40%;
+  }
+
+  .modalCard {
+    width: 40%;
+    height: 112px;
+    font-size: 15px;
+  }
+
+  #saveDollsBtn {
+    font-size: 14px;
+  }
+
+  .options::-webkit-scrollbar {
+    height: 5px;
+  }
+
+  .categories::-webkit-scrollbar {
+    height: 5px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+
+  #exportCanvasBtn {
+    left: 35px;
+  }
+
+  #switchDollBtn {
+    top: 5px;
+  }
+
+  #toggleMultiselectBtn {
+    top: 5px;
+    left: 220px;
+  }
+
+  .categories a {
+    font-size: 12px;
+  }
+}

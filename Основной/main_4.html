@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Музей Национальной Одежды</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('./fon-s-uzorami-114.webp') no-repeat center center/cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+        .card {
+            width: 300px;
+            height: 400px;
+            perspective: 1000px;
+        }
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+        }
+        .card:hover .card-inner {
+            transform: rotateY(10deg) rotateX(10deg);
+        }
+        .card-front {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            position: absolute;
+            backface-visibility: hidden;
+        }
+        .card img {
+            width: 100%;
+            height: 60%;
+            object-fit: cover;
+        }
+        .card .description {
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="./балалар/image_s_751x1000-removebg-preview.png" alt="Казахская национальная одежда">
+                    <div class="description">
+                        <h3>Қыздарға арналған камзол </h3>
+                        <p>ашық түсті және әшекейлермен безендірілген кішкентай камзол, ұлттық мерекелер мен өнер көрсетулерге тамаша сай келеді.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="./балалар/images-removebg-preview.png" alt="Киргизская национальная одежда">
+                    <div class="description">
+                        <h3>Балаларға арналған шапана</h3>
+                        <p>ересектер шапанының шағын нұсқасы, жеңіл әрі ашық түсті, кестемен безендірілген. Көбінесе мерекелер мен тойларда киіледі.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="./балалар/MUB9lHtc5qw-removebg-preview.png" alt="Узбекская национальная одежда">
+                    <div class="description">
+                        <h3>Тақия </h3>
+                        <p> ұлдар киетін, кестемен немесе моншақпен әшекейленген шағын дәстүрлі бас киім.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="./балалар/Screenshot_2025-02-10_at_02.38.18-removebg-preview.png" alt="Узбекская национальная одежда">
+                    <div class="description">
+                        <h3>Көктөбе көйлек</h3>
+                        <p>қыздарға арналған дәстүрлі мерекелік көйлек, жарқын өрнектермен және жеңіл бүрмелермен әшекейленген.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

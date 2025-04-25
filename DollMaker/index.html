@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Doll Maker</title>
+</head>
+<body>
+    <div class="dollsModal" id="modal">
+        <div id="modalContent">
+            <ul id="dollsUl">
+                <li class="modalCard" id="deleteAllDollsCard"><span>Барлық қуыршақты өшіру</span></li>
+                <li class="modalCard" id="createNewDollCard"><span>Жаңа қуыршақ жасау.</span></li>
+            </ul>
+            <button id="saveDollsBtn">Қуыршақтарды сақтау</button>
+        </div>
+    </div>
+    <div id="body">
+        <div class="canvas">
+            <canvas id="canvas"></canvas>
+            <button id="exportCanvasBtn">Сурет ретінде сақтау</button>
+            <button id="switchDollBtn">Қуыршақты ауыстыру.</button>
+            <button id="toggleMultiselectBtn">Көп таңдауды қосу/өшіру.</button>
+            <div class="options">
+                <ul id="optionsUl"></ul>
+            </div>
+            <div class="categories">
+                <a>Hair</a> 
+                <a>Dress</a>
+                <a>Face</a>
+                <a>Shoes</a>
+                <a>Accessory</a>
+            </div>
+        </div>
+
+        <div id="appliedOptions">
+            <ol id="appliedOptionsOl"></ol>
+        </div>
+    </div>
+    
+    
+    <script src="./js/canvas.js"></script>
+    <script id="DragDropTouch" src="https://bernardo-castilho.github.io/DragDropTouch/DragDropTouch.js"></script>
+</body>
+</html>

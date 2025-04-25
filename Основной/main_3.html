@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Музей казахской национальной одежды</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            overflow-x: hidden;
+            background: linear-gradient(90deg, #4b3621, #8c6239);
+            animation: gradientAnimation 10s infinite alternate ease-in-out;
+            color: #f5e1c5;
+            transition: background 2s ease-in-out;
+        }
+        @keyframes gradientAnimation {
+            0% { background: linear-gradient(90deg, #4b3621, #8c6239); }
+            50% { background: linear-gradient(90deg, #5d4037, #a1887f); }
+            100% { background: linear-gradient(90deg, #8c6239, #4b3621); }
+        }
+        .container {
+            text-align: center;
+            padding: 50px;
+            transition: transform 0.6s ease-in-out;
+        }
+        h1 {
+            font-size: 42px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        .description {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .gallery div {
+            perspective: 1000px;
+            transition: transform 0.6s ease-in-out;
+            cursor: pointer;
+            position: relative;
+        }
+        .gallery img {
+            width: 280px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transform: rotateY(0deg);
+            transition: transform 0.6s, box-shadow 0.6s;
+        }
+        .gallery div:hover img {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(2);
+            z-index: 1000;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
+        }
+        .gallery div:hover .description-box {
+            display: block;
+        }
+        .gallery p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .description-box {
+            display: none;
+            position: fixed;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            width: 50%;
+            text-align: center;
+            font-size: 18px;
+            z-index: 1100;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Қазақ ерлерінің ұлттық киімі</h1>
+        <p class="description">Қазақ ерлерінің ұлттық киімі – халықтың тұрмыс-салты мен мәдениетін көрсететін маңызды элементтердің бірі.</p>
+        <div class="gallery">
+            <div>
+                <img src="./шапан/DALL_E_2025_02_10_01_48_03_A_traditional_Kazakh_Koktobel_shapan.png" alt="Камзол 1">
+                <p>Көктөбел шапан</p>
+                <div class="description-box">мерекелік, сәндік шапан. Бұл шапан алтын немесе күміс жіптермен әшекейленіп, ерекше күндерде киіледі.</div>
+            </div>
+            <div>
+                <img src="./шапан/DALL_E_2025_02_10_01_49_29_A_traditional_Kazakh_Qaptal_shapan_a.png" alt="Камзол 2">
+                <p>Қаптал шапан </p>
+                <div class="description-box">күнделікті киюге арналған шапан. Қалың матадан тігілген, қарапайым, салқыннан қорғау үшін киіледі.</div>
+            </div>
+            <div>
+                <img src="./шапан/DALL_E_2025_02_10_01_49_31_A_traditional_Kazakh_Zhensiz_shapan_a.png" alt="Камзол 3">
+                <p>Жеңсіз шапан</p>
+                <div class="description-box">жеңі жоқ шапан, көбіне жылы мезгілде киіледі. Бұл шапан жеңіл әрі ыңғайлы.</div>
+            </div>
+            <div>
+                <img src="./шапан/DALL_E_2025_02_10_01_49_33_A_traditional_Kazakh_Sal_serilerdin_shapany.png" alt="Камзол 4">
+                <p>Сал-серілердің шапаны</p>
+                <div class="description-box">сал-серілер, ақындар мен әншілер киген шапан. Бұл шапандар ашық түсті, ерекше сәндік өрнектерімен безендірілген.</div>
+            </div>
+            <div>
+                <img src="./шапан/DALL_E_2025_02_10_01_49_34_A_traditional_Kazakh_Qysqy_shapan_a_winter.png" alt="Камзол 5">
+                <p>Қысқы шапан </p>
+                <div class="description-box">қыста киетін, іші жүн немесе мақтамен қапталған жылы шапан</div>
+            </div>
+            <div>
+                <img src="./шапан/DALL_E_2025_02_10_01_49_36_A_traditional_Kazakh_Kumis_shapan_a_robe.png" alt="Камзол 6">
+                <p>Күміс шапан</p>
+                <div class="description-box">күміс жіптермен әшекейленген шапан. Мұндай шапандарды көбіне сыйлы адамдар немесе үлкен кісілер киеді.</div>
+            </div>
+            <div>
+                <img src="./акс/DALL_E_2025_02_10_02_43_28_A_traditional_Kazakh_cap_called_Takiya.png" alt="Камзол 6">
+                <p>Тақия</p>
+                <div class="description-box">ерлер мен балалар киетін, көбіне кестеленіп, ою-өрнекпен сәнделген жеңіл бас киім..</div>
+            </div>
+            <div>
+                <img src="./акс/DALL_E_2025_02_10_02_43_30_A_traditional_Kazakh_winter_hat_called.png" alt="Камзол 6">
+                <p>Малақай</p>
+                <div class="description-box">суықтан қорғайтын құлақшын бас киім.</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">&copy; Astana IT University</div>
+    <audio id="bgMusic" autoplay loop muted>
+        <source src="./b.mp3" type="audio/mpeg">
+    </audio>
+    
+    <script>
+        window.addEventListener('click', function () {
+            let music = document.getElementById("bgMusic");
+            music.muted = false;
+            music.play();
+        }, { once: true });
+    </script>
+    
+    
+    
+    
+</body>
+</html>
